@@ -1,0 +1,9 @@
+{
+  "name": "my desktop widget",
+  "version": "0.1.0",
+  "description": "This is a desktop widget created with Electron.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

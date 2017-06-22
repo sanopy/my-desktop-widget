@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>設定</title>
+  </head>
+  <body>
+    <h1>設定</h1>
+    <form name="myform">
+      <ul>
+        <li>
+          <p>画像</p>
+          <select name="image">
+            <option value="image001">ひめ</option>
+            <option value="image002">かまって</option>
+            <option value="image003">あっ嬉しい</option>
+            <option value="image004">ドン引き</option>
+            <option value="image005">きょとん</option>
+          </select>
+        </li>
+        <li>
+          <p>吹き出し</p>
+          <select name="ballon">
+            <option value="black">黒</option>
+            <option value="orange">オレンジ</option>
+          </select>
+        </li>
+      </ul>
+    </form>
+
+    <script type="text/javascript">
+      const {remote} = require('electron');
+      const {ipc}    = remote;
+
+      let image  = document.myform.image.value;
+      let ballon = document.myform.ballon.value;
+
+      console.log(image, ballon);
+    </script>
+  </body>
+</html>
