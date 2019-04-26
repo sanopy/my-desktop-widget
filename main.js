@@ -18,21 +18,20 @@ function createMainWindow() {
 
   mainWindow = new BrowserWindow({
     x: 0,
-    y: screenSize.height - imageHeight - 40,
-    width: 390,
-    height: 285,
+    y: screenSize.height - imageHeight - 50,
+    width: 400,
+    height: imageHeight + 15,
     // useContentSize: true,
     frame: false,
     transparent: true,
-    alwaysOnTop: true
+    alwaysOnTop: true,
+    webPreferences: {
+      nodeIntegration: true
+    }
   });
   // mainWindow.setIgnoreMouseEvents(true);
 
-  mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'src/index.html'),
-    protocol: 'file:',
-    slashes: true
-  }));
+  mainWindow.loadURL(`file://${__dirname}/src/index.html`);
 
   // mainWindow.webContents.openDevTools();
 
